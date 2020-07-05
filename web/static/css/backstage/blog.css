@@ -1,0 +1,117 @@
+#blog-top-tool{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 95px);
+    position: fixed;
+    z-index: 100;
+}
+#manipulate{
+    width: 100%;
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-bottom: 2px solid rgb(0, 31, 255);
+}
+#manipulate div{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.2rem;
+    padding: 0.1rem;
+    border: 1px solid;
+    cursor: pointer;
+}
+#manipulate span{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: rgb(39, 39, 39);
+}
+#manipulate span.show-left{
+    width: 1rem;
+    margin-right: 1rem;
+}
+#manipulate span.show-right{
+    width: 1rem;
+    margin-left: 1rem;
+}
+#manipulate input{
+    height: 2rem;
+    width: 10rem;
+    margin-left: 0;
+}
+#manipulate button{
+    background: rgb(0, 255, 173);
+    padding: 0.28rem 0.3rem;
+    border: 1px solid;
+    margin: 0 0.7rem;
+}
+#body{
+    width: 100%;
+    margin: 1.2rem 0;
+    border-radius: 0.7rem;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 3rem;
+}
+#top-input{
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem;
+    border-bottom: 1px dashed black;
+}
+#top-input input{
+    width: 80%;
+    height: 2.4rem;
+    padding: 0.7rem;
+}
+#left-input, #right-show{
+    width: 49%;
+}
+#body textarea{
+    font-family: Consolas, serif;
+    padding: 0.7rem 1rem;
+    width: 90%;
+    overflow: hidden;
+    height: 3rem;
+}
+#input-cover{
+    width: calc(100% - 60px);
+    padding: 10px;
+    font-size: 20px;
+    margin: 20px;
+}
+.blog-title{
+    width: 100%;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+#input-title{
+    font-size: 1.5rem;
+    min-width: 3rem;
+}
+.blog-content{
+    width: 100%;
+    text-align: center;
+    margin: 1.2rem 0;
+    min-height: 30rem;
+}
+
+.blog-title>span{
+    color: black;
+    text-align: left;
+    display: block;
+}
+.blog-title>span{
+    font-size: 1.5rem;
+}
+#right-show{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

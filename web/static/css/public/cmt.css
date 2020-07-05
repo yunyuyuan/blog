@@ -1,0 +1,316 @@
+@keyframes cmt-slide {
+    to{
+        height: 100%;
+    }
+}
+.cmt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+}
+.cmt-input{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+.cmt-input span{
+    font-size: 1rem;
+    font-family: Consolas, serif;
+    color: rgb(11, 0, 255);
+    text-shadow: 0 0 0.1rem;
+}
+.cmt-input span b{
+    margin: 0 0.3rem;
+    font-size: 1.1em;
+}
+.cmt-input textarea{
+    height: 6rem;
+    resize: none;
+    outline: none;
+    padding: 0.2rem;
+    line-height: 1.1rem;
+    color: black;
+    background: white;
+    border: 1px solid black;
+    font-family: unset;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+.cmt-input textarea:focus{
+    border: 1px solid rgb(156, 91, 255);
+}
+.cmt-rich{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+.cmt-rich > span{
+    font-family: var(--ico-font);
+    color: rgb(176, 0, 255);
+    font-size: 1.8rem;
+    margin: 0.5rem 0.2rem;
+    padding: 0.1rem 0.2rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    border: 1px solid transparent;
+    position: relative;
+}
+.cmt-rich > span:hover{
+    border: 1px solid black;
+}
+.cmt-rich > span:nth-child(1):before{
+    content: var(--ico-smile);
+}
+.cmt-rich > span:nth-child(1) > div{
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    border-radius: 0.2rem;
+    border: 1px solid rgb(114, 33, 255);
+    top: 140%;
+    overflow: hidden;
+    display: none;
+}
+.cmt-rich > span:nth-child(2):before{
+    content: var(--ico-img);
+}
+.cmt-rich > span:nth-child(3):before{
+    content: var(--ico-link);
+}
+.cmt-rich > span:nth-child(4):before{
+    content: var(--ico-code);
+}
+.cmt-go{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.3rem 0;
+}
+.cmt-go input{
+    height: 2rem;
+    width: 6rem;
+    margin-left: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+.cmt-go img{
+    border: 1px solid black;
+    width: 8rem;
+    height: 3rem;
+    cursor: pointer;
+    object-fit: contain;
+    background: white;
+}
+.cmt-go button{
+    margin: 0 1rem;
+}
+
+.cmt-rich > div{
+    width: 110%;
+    height: 20rem;
+    position: absolute;
+    left: -5%;
+    top: calc(100% + 0.3rem);
+    overflow: hidden;
+    border-radius: 0.3rem;
+    border: 1px solid rgb(123, 123, 123);
+    z-index: 1;
+    display: none;
+    background: rgb(255, 235, 179);
+}
+.cmt-rich > div > div{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.cmt-rich > div input, .cmt-rich > div textarea{
+    padding: 0.15rem;
+    outline: none;
+    border: 2px solid #0005ff;
+}
+.cmt-rich > div input{
+    text-align: center;
+}
+
+.cmt-rich .cmt_stk_div{
+    height: 20rem;
+    background: white;
+}
+.cmt_stk_swc{
+    background: rgb(197, 197, 197);
+    font-size: 0.9rem;
+    position: relative;
+    height: 2rem;
+    width: 100%;
+}
+.cmt_stk_swc > a{
+    position: absolute;
+    width: 6rem;
+    height: 100%;
+    left: 0;
+    transition: left .2s linear;
+    background: rgb(255, 168, 59);
+}
+.cmt_stk_swc div {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.cmt_stk_swc span{
+    display: inline-block;
+    color: black;
+    padding: 0 1rem;
+    height: 100%;
+    width: 4rem;
+    text-align: center;
+    border-right: 1px solid rgb(82, 82, 82);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cmt_stk_cnt{
+    width: 300%;
+    height: calc(100% - 2rem);
+    position: relative;
+    transition: left .2s linear;
+    left: 100%;
+}
+.cmt_stk_wp{
+    height: 100%;
+    position: relative;
+    transition: left .2s linear;
+}
+.cmt_stk_wp > div{
+    width: 33.33333%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    float: left;
+}
+.cmt_stk_wp > div img{
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    padding: 0.28rem;
+    border: 1px solid darkgrey;
+    transition: transform .1s linear;
+    cursor: pointer;
+}
+.cmt_stk_wp > div img:hover{
+    transform: scale(1.2);
+    border: 1px solid transparent;
+}
+
+.cmt-rich .cmt_img_div{
+    width: 80%;
+    height: 16rem;
+    left: 10%;
+    align-items: center;
+    justify-content: flex-start;
+}
+.cmt-rich .cmt_img_div > div > div{
+    display: flex;
+}
+.cmt-rich .cmt_img_div > div > div:first-of-type{
+    width: 80%;
+    justify-content: space-around;
+    margin: 0.7rem 0;
+}
+.cmt-rich .cmt_img_div > div > div:first-of-type a{
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background: rgb(197, 197, 197);
+}
+.cmt-rich .cmt_img_div > div > div:first-of-type a.active{
+    background: rgb(0, 107, 255);
+    color: white;
+}
+.cmt-rich .cmt_img_div > div > div[data-t]{
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 1 1 auto;
+}
+.cmt-rich .cmt_img_div > div > div[data-t] button{
+    padding: 0.3rem;
+    background: rgb(255, 172, 0);
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+.cmt-rich .cmt_img_div > div > div[data-t] button:disabled{
+    background: gray;
+}
+.cmt-rich .cmt_img_div > div > div[data-t='u'] input{
+    padding: 0.3rem;
+}
+.cmt-rich .cmt_img_div > div > div[data-t='i'] input{
+    display: none;
+}
+.cmt-rich .cmt_img_div > div > div[data-t='i'] span{
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed;
+    border-radius: 10%;
+    padding: 1rem 3rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.cmt-rich .cmt_img_div > div > div[data-t='i'] span:before{
+    font-family: var(--ico-font);
+    font-size: 4em;
+    content: var(--ico-choose-img);
+}
+.cmt-rich .cmt_img_div .ico-submit{
+    margin: 5% 0;
+}
+
+.cmt-rich .cmt_url_div{
+    width: 80%;
+    left: 10%;
+    height: 12rem;
+    align-items: center;
+}
+.cmt-rich .cmt_url_div input, .cmt-rich .cmt_url_div textarea{
+    width: 80%;
+    height: 15%;
+}
+.cmt-rich .cmt_url_div textarea{
+    height: 30%;
+}
+
+.cmt-rich .cmt_code_div{
+    align-items: center;
+}
+.cmt-rich .cmt_code_div select{
+    height: 10%;
+    width: 30%;
+    font-size: 0.8rem;
+}
+.cmt-rich .cmt_code_div textarea{
+    height: 60%;
+    width: 90%;
+}
+
+
+@media screen and (max-width: 1200px) and (min-height: 900px){
+    .cmt{
+        width: 85%;
+    }
+}

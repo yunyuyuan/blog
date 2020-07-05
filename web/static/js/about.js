@@ -1,0 +1,1 @@
+domready(page_load);

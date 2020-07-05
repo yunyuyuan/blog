@@ -1,0 +1,262 @@
+.mark-container{
+    color: black;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 0.5rem;
+    letter-spacing: 0.5px;
+    word-break: break-all;
+    font-size: 0.95rem;
+}
+.mark-container hr{
+    width: 100%;
+    background: black;
+}
+.mark-container p,.mark-container li,.mark-container blockquote{
+    line-height: 1.8rem;
+    position: relative;
+}
+.mark-container h1 > a, .mark-container h2 > a, .mark-container h3 > a, .mark-container h4 > a, .mark-container h5 > a, .mark-container h6 > a {
+    text-decoration: none;
+    color: rgb(255, 64, 64);
+}
+.mark-container h1 > a:before, .mark-container h2 > a:before, .mark-container h3 > a:before, .mark-container h4 > a:before, .mark-container h5 > a:before, .mark-container h6 > a:before {
+    font-family: var(--ico-font);
+    content: var(--ico-clip);
+    margin-right: 0.3rem;
+    color: black;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+.mark-container a{
+    display: inline-block;
+    color: rgb(0, 8, 255);
+    position: relative;
+    margin: 0 0.3rem;
+    word-break: break-all;
+    text-decoration: none;
+}
+.mark-container a[href*='/']:after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background: black;
+    top: 85%;
+    left: 0;
+}
+.mark-container img{
+    width: 30rem;
+    max-width: 100%;
+    object-fit: contain;
+}
+@keyframes link-a{
+    25%{
+        transform: perspective(200px) rotateZ(5deg);
+    }50%{
+         transform: perspective(200px) rotateZ(0deg);
+     }75%{
+          transform: perspective(200px) rotateZ(-5deg);
+      }100%{
+           transform: perspective(200px) rotateZ(0deg);
+       }
+}
+.mark-container a:hover{
+    animation: link-a .3s cubic-bezier(0, 0.6, 1, 0.49);
+}
+.mark-container blockquote{
+    border-left: 0.3rem solid;
+    padding: 0.5rem 0.8rem;
+    margin: 1rem 0.6rem;
+    background: rgb(226, 226, 226);
+    border-radius: 0 0.7rem 0.7rem 0;
+}
+.mark-container pre{
+    line-height: 0.85rem;
+    background: rgb(43, 43, 43);
+    padding: 0;
+    border-radius: 0.5rem;
+    border: 1px solid;
+}
+.mark-container code{
+    font-family: var(--code-font), serif;
+    background: rgba(255, 148, 247, 0.5);
+    color: black;
+    padding: 0.12rem 0.25rem;
+    margin: 0 0.3rem;
+    border-radius: 0.3rem;
+    word-break: break-word;
+}
+.mark-container pre code{
+    background: unset;
+    color: white;
+    padding: 0;
+    margin: 0;
+    border-radius: inherit;
+    font-size: 0.9em;
+    display: block;
+    max-height: 50rem;
+    overflow: auto;
+}
+.mark-container pre li{
+    height: 0.85rem;
+    position: relative;
+}
+.mark-container em{
+    text-shadow: 0 0 0.15rem rgb(0, 173, 255);
+    margin: 0 0.3rem;
+}
+.mark-container strong{
+    text-shadow: 0 0 0.15rem rgb(208, 115, 255);
+    margin: 0 0.3rem;
+}
+
+.mark-container ol, .mark-container ul{
+    padding: 0 0 0 2rem;
+    list-style: none;
+}
+.mark-container ol li, .mark-container ul li{
+    margin: 0.3rem 0;
+}
+.mark-container ol{
+    counter-reset: xx 0;
+}
+.mark-container ol > li:before{
+    content: counter(xx) ".";
+    counter-increment: xx;
+    display: block;
+    font-family: var(--code-font);
+    font-size: 1.2em;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    left: -2rem;
+}
+.mark-container ul{
+    padding: 0 0 0 2rem;
+}
+.mark-container ul:not(.code-ul) li:before{
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 35%;
+    position: absolute;
+    left: -2rem;
+    top: 0.4rem;
+    background: black;
+    border: 0.2rem solid;
+}
+.mark-container li ul:not(.code-ul) li:before{
+    background: transparent;
+    border: 0.2rem solid black;
+}
+.mark-container table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+.mark-container thead{
+    font-size: 0.9em;
+    background: rgb(129, 238, 255);
+}
+.mark-container tbody{
+    font-size: 0.88em;
+    border-radius: inherit;
+}
+.mark-container tr{
+    text-align: center;
+    border: 1px solid black;
+}
+.mark-container th,.mark-container td{
+    border: 1px solid;
+    padding: 0.3rem 0;
+    line-height: 1.6rem;
+}
+.mark-container th{
+    color: black;
+}
+
+
+.hljs.code-tabled{
+    padding: 0;
+}
+.code-div{
+    display: flex;
+    overflow: auto;
+    border-radius: 0.5rem;
+}
+pre code .code-div li{
+    line-height: 1.2rem;
+    height: 1.2rem;
+    white-space: pre;
+    word-break: keep-all;
+}
+ul.code-ul{
+    list-style: none;
+}
+ul.num-ul{
+    padding: 0.5rem 0.4rem 0.5rem 0.7rem;
+    border-right: 0.05rem solid white;
+    text-align: right;
+    background: rgb(56, 56, 56);
+    font-family: var(--code-font);
+    color: white;
+}
+.code-main.hljs{
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem 0.4rem 0.5rem 0.7rem;
+    border-radius: 0;
+}
+ul.content-ul{
+    padding: 0;
+}
+.hljs{
+    display:block;
+    overflow-x:auto;
+    padding:1rem;
+    border-radius: 0.5rem;
+    background: rgba(43, 43, 43, 0.95);
+    font-family: var(--code-font), serif;
+}
+.hljs,.hljs-subst{
+    color: rgb(222, 222, 222)
+}
+.hljs-comment{
+    color: rgb(136, 136, 136)
+}
+.hljs-keyword,.hljs-attribute,.hljs-selector-tag,.hljs-meta-keyword,.hljs-doctag,.hljs-name{
+    font-weight:bold;
+    color: rgb(255, 123, 60);
+}
+.hljs-type,.hljs-string,.hljs-selector-id,.hljs-selector-class,.hljs-quote,.hljs-template-tag,.hljs-deletion{
+    color: rgb(126, 197, 85)
+}
+.hljs-number{
+    color: rgb(90, 161, 255);
+}
+.hljs-title,.hljs-section{
+    color: rgb(255, 198, 109);
+    font-weight:bold
+}
+.hljs-regexp,.hljs-symbol,.hljs-variable,.hljs-template-variable,.hljs-link,.hljs-selector-attr,.hljs-selector-pseudo{
+    color: rgb(255, 225, 62);
+}
+.hljs-literal{
+    color: rgb(120, 169, 96)
+}
+.hljs-built_in,.hljs-bullet,.hljs-code,.hljs-addition{
+    color: rgb(231, 134, 255);
+}
+.hljs-meta{
+    color: rgb(241, 235, 51)
+}
+.hljs-meta-string{
+    color: rgb(77, 153, 191)
+}
+.hljs-emphasis{
+    font-style:italic
+}
+.hljs-strong{
+    font-weight:bold
+}

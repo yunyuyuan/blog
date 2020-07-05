@@ -1,0 +1,32 @@
+#record-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.record{
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+    background: white;
+    box-shadow: 0 0 1rem rgb(35, 35, 35);
+    position: relative;
+    margin: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    opacity: 0;
+    animation: emerge .3s linear .15s forwards;
+}
+.record>b{
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+}
+.record span{
+    font-family: var(--write-font), sans-serif;
+    font-size: 1.2rem;
+    white-space: pre-line;
+}
+.record span img{
+    width: 2.8rem;
+}

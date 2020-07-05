@@ -1,0 +1,219 @@
+#show-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#home-head{
+    margin-top: 3rem;
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+}
+#home-head > div{
+    position: relative;
+    opacity: 0;
+    animation: head-slide .3s ease-out .15s forwards;
+}
+@keyframes welcome-flash{
+    0%{
+        color: red;
+    }50%{
+         color: blue;
+     }100%{
+          color: red;
+      }
+}
+#home-head div > div{
+    background: white;
+    font-family: var(--write-font);
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 0 1rem white;
+    animation: welcome-flash 5s linear infinite;
+    font-weight: bold;
+}
+#home-head div > div:before, #home-head div > div:after{
+    content: '';
+    width: 0.5rem;
+    height: 5rem;
+    background: rgb(218, 218, 218);
+    position: absolute;
+    top: -4rem;
+    border-radius: 1rem;
+}
+#home-head div > div:before{
+    left: 10%;
+}
+#home-head div > div:after{
+    right: 10%;
+}
+
+#home-bottom{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-top: 1rem;
+    color: black;
+}
+#home-left{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 2rem;
+}
+#home-left > div{
+    padding: 0.5rem 0;
+}
+#home-left > div > p{
+    position: relative;
+    width: 50%;
+    background: black;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    margin-bottom: 3rem;
+}
+#new-blog{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin: 0.8rem 0;
+}
+#new-blog > div.blog-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    animation: emerge .3s ease-out .15s forwards;
+}
+#new-blog > div.blog-wrap:hover > b{
+    background: rgb(255, 168, 69);
+}
+#new-blog > div.blog-wrap > b{
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: black;
+    background: rgb(255, 143, 11);
+    transition: background .1s linear;
+    font-size: 1.1em;
+    height: 1.4rem;
+    line-height: 1.4rem;
+}
+#new-blog > div.blog-wrap > .blog-main{
+    height: 15rem;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+#new-blog > div.blog-wrap > .blog-main > article{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background: white;
+}
+#new-blog > div.blog-wrap > .blog-main > article > span{
+    overflow: hidden;
+    width: 70%;
+}
+#new-blog > div.blog-wrap > .blog-main > article *{
+    color: black;
+}
+#new-blog > div.blog-wrap > .blog-main > article > span img{
+    display: none;
+}
+#new-blog > div.blog-wrap > .blog-main > article > img{
+    width: 30%;
+    object-fit: contain;
+}
+#new-blog > div.blog-wrap > .blog-main > a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#new-blog > div.blog-wrap > div:last-child{
+    display: flex;
+    justify-content: flex-end;
+    background: rgb(39, 39, 39);
+    padding: 0.3rem 0;
+    width: 100%;
+    border-top: 1px solid black;
+}
+#new-blog > div.blog-wrap > div:last-child span{
+    margin: 0 0.5rem;
+    font-size: 0.85em;
+    color: white;
+}
+#new-blog > div.blog-wrap > div:last-child span:before{
+    font-family: var(--ico-font);
+    margin: 0 0.3rem;
+    color: rgb(92, 205, 255);
+    font-size: 1.2em;
+    position: relative;
+    top: 0.15rem;
+}
+#new-blog > div.blog-wrap > div:last-child span:nth-child(1):before{
+    content: var(--ico-time);
+}
+#new-blog > div.blog-wrap > div:last-child span:nth-child(2):before{
+    content: var(--ico-see);
+}
+#new-blog > div.blog-wrap > div:last-child span:nth-child(3):before{
+    content: var(--ico-comment);
+}
+#new-record{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#new-record > span{
+    font-family: var(--write-font);
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    position: relative;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: pre-line;
+    opacity: 0;
+    animation: emerge .6s ease-out .3s forwards;
+}
+#new-record > span > span{
+    font-weight: bold;
+    font-family: var(--code-font);
+    font-size: 0.7em;
+    margin-bottom: 0.5rem;
+}
+
+
+@media screen and (max-width: 1200px) and (min-height: 900px){
+    #home-head{
+        width: 90%;
+    }
+    #home-bottom{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    #home-left{
+        width: 95%;
+        margin: 0 2.5%;
+    }
+}

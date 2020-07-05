@@ -1,0 +1,53 @@
+:root{
+    --c-c: rgba(43, 43, 43, 0.95);
+    --f-c: rgb(100, 99, 255);
+}
+
+#-head-container{
+    position: fixed;
+    width: 7rem;
+    height: 100%;
+    padding: 0 0.7rem;
+    background: rgb(88, 182, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+#-head-container a{
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 1px solid;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    height: 2rem;
+    line-height: 2.4rem;
+    margin: 0.7rem 0;
+    text-align: center;
+    cursor: pointer;
+}
+#-head-container a.active{
+    background: rgb(211, 147, 255);
+}
+#change-mod{
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    background: black;
+    cursor: pointer;
+    line-height: 1.4rem;
+    text-align: center;
+    color: white;
+}
+
+#container{
+    position: absolute;
+    left: 8rem;
+    width: calc(100% - 8rem);
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
++

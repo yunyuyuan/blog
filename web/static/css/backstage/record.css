@@ -1,0 +1,48 @@
+#record-top{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+}
+#record-operate{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#record-operate > button{
+    background: aqua;
+    border: 1px solid;
+    padding: 4px 6px;
+    margin: 0 8px;
+}
+#record-operate input{
+    height: 35px;
+    width: 200px;
+}
+#record-choose-color{
+    display: flex;
+    align-items: center;
+}
+#record-choose-color span{
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+    cursor: pointer;
+    border: 1px solid;
+}
+#record-body{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 30px 0;
+    background: white;
+}
+#record-body textarea{
+    width: 80%;
+    font-size: 18px;
+    overflow: hidden;
+    padding: 8px 12px;
+    min-height: 100px;
+}

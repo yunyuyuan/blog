@@ -1,0 +1,607 @@
+:root{
+    --head-height: 60px;
+    --is-phone:f;
+
+    /*  svg font  */
+    --ico-chidouren: '\e601';
+    --ico-choose-img: '\e60f';
+    --ico-clip: '\e6a3';
+    --ico-set: '\e605';
+    --ico-go: '\e99f';
+    --ico-comment: '\e71a';
+    --ico-manager: '\e634';
+    --ico-see: '\e606';
+    --ico-link: '\e63b';
+    --ico-smile: '\e618';
+    --ico-switch: '\e64d';
+    --ico-share: '\e608';
+    --ico-time: '\e60b';
+    --ico-beian: '\e97f';
+    --ico-check: '\e65d';
+    --ico-close: '\e602';
+    --ico-other: '\e642';
+    --ico-tag: '\e61b';
+    --ico-about: '\e600';
+    --ico-img: '\ebc5';
+    --ico-menu: '\e619';
+    --ico-code: '\eb9f';
+    --ico-tri: '\e612';
+    --ico-save: '\e633';
+}
+/* animate */
+@keyframes head-slide{
+    0%{
+        opacity: 0;
+        top: -50%;
+    }100%{
+         opacity: 1;
+         top: 0;
+     }
+}
+@keyframes emerge {
+    0%{
+        opacity: 0;
+        top: 1rem;
+    }100%{
+         opacity: 1;
+         top: 0;
+     }
+}
+@keyframes font-fadein {
+    0%{
+        color: rgba(0, 0, 0, 0);
+    }100%{
+         color: rgba(0, 0, 0, 1);
+     }
+}
+
+#snow-div{
+    overflow: hidden;
+}
+#snow-div img{
+    position: absolute;
+}
+#-head-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--head-height);
+    background: rgba(239, 239, 239, 0.9);
+    z-index: 1000;
+    transition: top .25s linear;
+    box-shadow: 0 0 0.4rem black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#-head-container.headroom--pinned{
+    top: 0;
+}
+#-head-container.headroom--unpinned{
+    top: calc(var(--head-height) * -1);
+}
+.signature{
+    height: 95%;
+    top: 2.5%;
+    left: 0;
+    margin-left: 0.7rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.signature:hover span{
+    color: rgb(206, 0, 0);
+}
+.signature img{
+    height: 92%;
+    cursor: pointer;
+    border-radius: 0.7rem;
+}
+.signature span{
+    font-family: var(--write-font);
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-left: 0.6rem;
+    width: 7rem;
+    word-break: keep-all;
+    color: rgb(255, 71, 71);
+    transition: color .15s linear;
+    text-shadow: 0.1rem 0.1rem 0.2rem #9b9b9b;
+}
+#-head-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+#-head-menu{
+    display: none;
+}
+#-head-main > div{
+    width: calc(100% - 0.04rem);
+    display: flex;
+    align-items: center;
+}
+.-head-tag{
+    width: 5rem;
+    height: 2.4rem;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    margin: 0 1rem;
+    background: rgb(153, 250, 255);
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: 0.05rem 0.1rem 0.2rem rgb(0, 137, 255), inset 0 0 0.8rem white;
+}
+.-head-tag:hover{
+    top: 0.05rem;
+    left: 0.02rem;
+    box-shadow: 0.03rem 0.05rem 0.1rem rgb(0, 137, 255), inset 0 0 0.8rem white;
+}
+.-head-tag img{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+#-head-other{
+    min-height: 100%;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+}
+#-head-other span{
+    font-family: var(--ico-font);
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+#-head-other > span{
+    border-radius: inherit;
+    transition: transform .1s linear;
+    height: var(--head-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#-head-other > span:hover:before{
+    color: rgb(244, 255, 0);
+    text-shadow: 0 0 0.3rem rgb(255, 138, 0);
+}
+#-head-other > span:before{
+    content: var(--ico-other);
+    color: white;
+    font-size: 0.8em;
+    background: rgb(95, 122, 255);
+    padding: 0.3rem 1.5rem;
+    border-radius: inherit;
+    text-shadow: 0 0 0.3rem white;
+    box-shadow: 0.05rem 0.05rem 0.15rem black;
+    transition: color .15s linear,text-shadow .15s linear;
+}
+#-head-other > div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    border-radius: 0.8rem;
+    height: 0;
+    overflow: hidden;
+}
+#-head-other > div[data-s='l']{
+    border: 1px solid rgb(27, 27, 27);
+}
+#-head-other > div span{
+    margin: 0.5rem 0;
+    font-weight: bold;
+    position: relative;
+}
+#-head-other > div span:nth-child(1):before{
+    content: var(--ico-set);
+    color: rgb(176, 0, 255);
+}
+#-head-other > div span:nth-child(2):before{
+    content: var(--ico-about);
+    color: rgb(0, 36, 255);
+}
+#-head-other > div span:nth-child(2){
+    transform-origin: bottom;
+}
+#-head-other > div span:nth-child(2) a{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+@keyframes set-spin{
+    0%{
+        transform: rotate(0);
+    }100%{
+         transform: rotate(-360deg);
+     }
+}
+@keyframes about-bounce{
+    0%{
+        transform: rotate(0deg);
+    }25%{
+         transform: rotate(-20deg);
+     }50%{
+          transform: rotate(0deg);
+      }75%{
+           transform: rotate(20deg);
+       }100%{
+            transform: rotate(0deg);
+        }
+}
+#-head-other > div span:nth-child(1):hover{
+    animation: set-spin 2s linear infinite;
+}
+#-head-other > div span:nth-child(2):hover{
+    animation: about-bounce .5s linear;
+}
+#-head-login{
+    position: relative;
+    right: 0.5rem;
+    height: 100%;
+    width: var(--head-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#-head-login img{
+    height: 90%;
+    border-radius: 50%;
+    border: 1px solid black;
+    opacity: 0.95;
+    transition: opacity .05s linear;
+    background: white;
+    cursor: pointer;
+}
+#-head-login img:hover{
+    opacity: 1;
+}
+
+#login-div, #-head-set{
+    display: none;
+    z-index: 1001;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+#login-wrap, #-head-set > div > div{
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+#login-wrap{
+    width: 24rem;
+    height: 24rem;
+}
+#login-wrap .login-close, .set-head span{
+    font-family: var(--ico-font);
+    font-size: 1.3rem;
+    margin: 0.7rem 0.7rem 0 auto;
+    cursor: pointer;
+    transition: transform .2s linear, color .2s linear;
+}
+#login-wrap .login-close:before, .set-head span:before{
+    content: var(--ico-close);
+}
+#login-wrap .login-close:hover, .set-head span:hover{
+    transform: rotate(180deg);
+    color: rgb(255, 0, 0);
+}
+#login-wrap > img{
+    margin: 1.2rem 0.7rem;
+    width: 7rem;
+    height: 7rem;
+}
+#login-wrap button{
+    font-weight: bold;
+    border: 1px solid black;
+    font-size: 0.9rem;
+}
+#login-wrap > button{
+    background: rgb(255, 58, 56);
+    margin-top: 2rem;
+    padding: 0.3rem 0.4rem;
+    color: white;
+}
+#login-wrap .login-state{
+    font-size: 1.2rem;
+}
+#login-wrap > b{
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: red;
+    text-align: center;
+}
+#login-wrap > div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.2rem ;
+}
+#login-wrap > div > img{
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0.7rem;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+#login-wrap > div > img:hover{
+    background: rgb(153, 252, 255);
+}
+#login-wrap > div input{
+    width: 12rem;
+    padding: 0.28rem;
+}
+#login-wrap > div button{
+    background: rgb(83, 255, 244);
+    padding: 0.3rem 0.4rem;
+    margin-left: 0.3rem;
+}
+#login-wrap > i{
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+#-head-set div{
+    display: flex;
+}
+#-head-set > div, #login-div > div{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.set-head{
+    width: 100%;
+    background: rgb(181, 214, 255);
+    align-items: center;
+}
+.set-head b{
+    color: black;
+    font-size: 1rem;
+    padding: 0.4rem;
+}
+.set-head span{
+    margin: 0 0.4rem 0 auto;
+    color: rgb(0, 0, 0);
+}
+.set-head span:before{
+    content: var(--ico-close);
+}
+.set-body{
+    width: 100%;
+}
+.set-body ul{
+    list-style: none;
+    width: 100%;
+}
+.set-body li{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+.set-body li:last-of-type{
+    border-bottom: none;
+}
+.set-body li > div{
+    padding: 1rem 0.5rem;
+}
+.set-body li > b{
+    width: 4rem;
+    text-align: center;
+    font-size: 0.95em;
+}
+.set-body li > div{
+    flex-grow: 1;
+    justify-content: space-around;
+    border-left: 1px dashed rgb(148, 148, 148);
+}
+.set-color span{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 20%;
+    border: 0.1rem solid black;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.set-color span:hover{
+    border-color: red;
+}
+.set-color span:before{
+    content: '';
+    position: absolute;
+    font-family: var(--ico-font);
+    font-size: 1.5rem;
+    color: rgb(41, 91, 255);
+    border-radius: 50%;
+    left: -100%;
+}
+.set-color span[data-c='t']:before{
+    content: var(--ico-check);
+}
+#-head-set .set-animate > div{
+    flex-direction: column;
+}
+.set-animate .set-animate-wrap{
+    flex-direction: column;
+    align-items: center;
+    margin: 0.7rem;
+    padding: 1.2rem 0;
+    border: 1px solid;
+    border-radius: 0.3rem;
+    background: rgb(217, 255, 244);
+}
+.set-animate .toggle-wrapper{
+    margin-bottom: 1rem;
+}
+.set-animate .animate-cate{
+    width: 100%;
+    justify-content: center;
+}
+.set-animate .animate-cate span{
+    padding: 0.2rem 0.4rem;
+    font-size: 0.95rem;
+    border-radius: 15%;
+    cursor: pointer;
+    transition: background .1s linear, color .1s linear;
+    margin: 0 0.5rem;
+}
+.set-animate .animate-cate span.active{
+    background: rgb(255, 78, 0);
+    color: white;
+}
+.set-animate .animate-count{
+    font-size: 0.95em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.set-animate .animate-count b{
+    width: 0;
+    color: red;
+    font-size: 1.2em;
+}
+
+#to-top{
+    position: fixed;
+    bottom: 2rem;
+    left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+#to-top-img{
+    display: none;
+    cursor: pointer;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: white;
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
+
+
+/* public */
+#container{
+    position: absolute;
+    width: 100%;
+    min-height: calc(100% - var(--head-height));
+    top: var(--head-height);
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(247, 247, 247);
+}
+#body-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0 1rem 0;
+    flex: 1 0 auto;
+}
+#show-wrap{
+    flex-shrink: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) and (min-height: 900px) {
+    :root {
+        --head-height: 120px;
+        --is-phone:t;
+    }
+    .signature span{
+        display: none;
+    }
+    #-head-main{
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        border-radius: 15px;
+        overflow: hidden;
+        outline: none;
+        z-index: 1;
+        align-self: flex-start;
+    }
+    #-head-main > div{
+        flex-direction: column;
+        transition: background .4s linear;
+        border-radius: 0.5rem;
+        border: 0.02rem solid transparent;
+        height: 0;
+    }
+    #-head-main[data-tog='down'] > div{
+        background: white;
+        border: 0.02rem solid rgb(124, 0, 239);
+    }
+    .-head-tag{
+        margin: 20px;
+        position: relative;
+        top: 0;
+        left: -100%;
+        transition: box-shadow .2s ease-out, top .2s ease-out;
+    }
+    #-head-menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        color: white;
+        width: 7.5rem;
+        border-radius: 10px;
+        text-align: center;
+        height: var(--head-height);
+        background: transparent;
+    }
+    #-head-menu:before{
+        content: var(--ico-menu);
+        font-family: var(--ico-font);
+        background: rgb(124, 0, 239);
+        padding: 0.3rem 0;
+        width: 100%;
+        border-radius: inherit;
+    }
+    #-head-other{
+        top: 13%;
+        right: 6rem;
+    }
+    #-head-set > div > div{
+        width: 95%;
+        left: 2.5%;
+    }
+    .set-color span:before {
+        top: 0.15rem;
+    }
+
+    #show-wrap{
+        max-width: unset;
+    }
+}
