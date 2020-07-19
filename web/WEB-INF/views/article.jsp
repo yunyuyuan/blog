@@ -1,9 +1,9 @@
 <%@ page import="com.alibaba.fastjson.JSONArray" %>
 <%@ page import="org.springframework.jdbc.core.JdbcTemplate" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@ page import="qiang.blog.dao.BlogDao" %>
-<%@ page import="static qiang.blog.tool.calcPageCount" %>
-<%@ page import="qiang.blog.dao.BlogEntity" %>
+<%@ page import="cn.phyer.blog.dao.BlogDao" %>
+<%@ page import="static cn.phyer.blog.tool.calcPageCount" %>
+<%@ page import="cn.phyer.blog.dao.BlogEntity" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" %>

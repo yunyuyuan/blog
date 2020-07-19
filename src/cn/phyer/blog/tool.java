@@ -1,4 +1,4 @@
-package qiang.blog;
+package cn.phyer.blog;
 
 import javax.imageio.ImageIO;
 import javax.mail.Message;

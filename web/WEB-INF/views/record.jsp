@@ -1,7 +1,7 @@
-<%@ page import="qiang.blog.dao.RecordDao" %>
+<%@ page import="cn.phyer.blog.dao.RecordDao" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="static qiang.blog.tool.calcPageCount" %>
+<%@ page import="static cn.phyer.blog.tool.calcPageCount" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>

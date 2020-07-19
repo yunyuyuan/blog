@@ -1,10 +1,10 @@
-package qiang.blog.sqlAjax;
+package cn.phyer.blog.sqlAjax;
 
+import cn.phyer.blog.mailSender;
 import com.alibaba.fastjson.JSONArray;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.BlogDao;
-import qiang.blog.dao.UserDao;
-import qiang.blog.mailSender;
+import cn.phyer.blog.dao.BlogDao;
+import cn.phyer.blog.dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-import static qiang.blog.tool.*;
+import static cn.phyer.blog.tool.*;
 
 @WebServlet(name = "CommentAction")
 public class CommentAction extends HttpServlet {

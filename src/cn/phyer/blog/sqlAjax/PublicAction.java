@@ -1,7 +1,7 @@
-package qiang.blog.sqlAjax;
+package cn.phyer.blog.sqlAjax;
 
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.UserDao;
+import cn.phyer.blog.dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static qiang.blog.tool.createB64;
+import static cn.phyer.blog.tool.createB64;
 
 @WebServlet(name = "PublicAction")
 public class PublicAction extends HttpServlet {

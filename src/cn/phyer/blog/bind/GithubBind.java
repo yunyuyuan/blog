@@ -1,8 +1,9 @@
-package qiang.blog.bind;
+package cn.phyer.blog.bind;
 
+import cn.phyer.blog.tool;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.UserDao;
+import cn.phyer.blog.dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,14 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static qiang.blog.tool.get_string_from_response;
-import static qiang.blog.tool.oauthPost;
 
 @WebServlet(name = "GithubBind")
 public class GithubBind extends HttpServlet {
@@ -64,7 +60,7 @@ public class GithubBind extends HttpServlet {
         String paras = "client_id=Iv1.588e073872ef9d4d&client_secret=111&code=" + code + "&state=" + state;
         URL url = new URL("https://github.com/login/oauth/access_token");
 
-        return get_string_from_response(oauthPost(url, paras));
+        return tool.get_string_from_response(tool.oauthPost(url, paras));
     }
 
     private String getUserInfo(String token) throws IOException {
@@ -74,6 +70,6 @@ public class GithubBind extends HttpServlet {
         connection.setConnectTimeout(10000);
         connection.setReadTimeout(10000);
 
-        return get_string_from_response(connection);
+        return tool.get_string_from_response(connection);
     }
 }

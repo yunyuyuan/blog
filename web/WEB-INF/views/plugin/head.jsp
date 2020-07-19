@@ -1,4 +1,4 @@
-<%@ page import="qiang.blog.dao.UserDao" %>
+<%@ page import="cn.phyer.blog.dao.UserDao" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.List" %>

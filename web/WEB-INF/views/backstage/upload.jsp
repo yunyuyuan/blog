@@ -1,4 +1,4 @@
-<%@ page import="qiang.blog.dao.ImgDao" %>
+<%@ page import="cn.phyer.blog.dao.ImgDao" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <%@ page import="com.alibaba.fastjson.JSONArray" %>
 <%@ page import="com.alibaba.fastjson.JSONObject" %>

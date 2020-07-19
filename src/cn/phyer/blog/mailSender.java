@@ -1,8 +1,8 @@
-package qiang.blog;
+package cn.phyer.blog;
 
-import qiang.blog.dao.BlogDao;
+import cn.phyer.blog.dao.BlogDao;
 
-import static qiang.blog.tool.sendMail;
+import static cn.phyer.blog.tool.sendMail;
 
 public class mailSender implements Runnable {
     private String rd;

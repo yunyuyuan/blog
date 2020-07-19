@@ -1,5 +1,6 @@
-package qiang.blog.dao;
+package cn.phyer.blog.dao;
 
+import cn.phyer.blog.tool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,15 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
-import static qiang.blog.tool.escapeBrackets;
-
 @Service("userDao")
 public class UserDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public int updateUserInfo(String platform, String open_id, String nickname, String avatar_url){
-        nickname = escapeBrackets((nickname.length() == 0)? "Unknown":nickname);
+        nickname = tool.escapeBrackets((nickname.length() == 0)? "Unknown":nickname);
         if (jdbcTemplate.queryForObject("select count(*) from users where open_id=? and platform=?", new Object[]{open_id, platform}, Integer.class) == 0) {
             jdbcTemplate.update("insert into users (platform, open_id, nickname, avatar_url, email, send_img) values (?, ?, ?, ?, '', '0');", platform, open_id, nickname, avatar_url);
             return jdbcTemplate.queryForObject("select last_insert_id()", Integer.class);

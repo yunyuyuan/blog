@@ -1,4 +1,4 @@
-package qiang.blog.plugin;
+package cn.phyer.blog.plugin;
 
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;

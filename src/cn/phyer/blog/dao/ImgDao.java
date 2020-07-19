@@ -1,4 +1,4 @@
-package qiang.blog.dao;
+package cn.phyer.blog.dao;
 
 import com.alibaba.fastjson.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;

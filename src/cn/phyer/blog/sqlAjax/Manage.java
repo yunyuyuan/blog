@@ -1,13 +1,13 @@
-package qiang.blog.sqlAjax;
+package cn.phyer.blog.sqlAjax;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.BlogDao;
-import qiang.blog.dao.ImgDao;
-import qiang.blog.dao.RecordDao;
+import cn.phyer.blog.dao.BlogDao;
+import cn.phyer.blog.dao.ImgDao;
+import cn.phyer.blog.dao.RecordDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;

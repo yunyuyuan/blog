@@ -1,8 +1,9 @@
-package qiang.blog.bind;
+package cn.phyer.blog.bind;
 
+import cn.phyer.blog.tool;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.UserDao;
+import cn.phyer.blog.dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,17 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static qiang.blog.tool.get_string_from_response;
 
 public class QqBind extends HttpServlet {
     private static final Pattern token_pattern = Pattern.compile("access_token=(.*?)&");
@@ -74,7 +69,7 @@ public class QqBind extends HttpServlet {
         connection.setConnectTimeout(10000);
         connection.setReadTimeout(10000);
 
-        return get_string_from_response(connection);
+        return tool.get_string_from_response(connection);
     }
 
     public String getOpenId(String token) throws IOException {
@@ -84,7 +79,7 @@ public class QqBind extends HttpServlet {
         connection.setConnectTimeout(10000);
         connection.setReadTimeout(10000);
 
-        return get_string_from_response(connection);
+        return tool.get_string_from_response(connection);
     }
 
     public String getUserInfo(String token, String open_id) throws IOException {
@@ -94,6 +89,6 @@ public class QqBind extends HttpServlet {
         connection.setConnectTimeout(10000);
         connection.setReadTimeout(10000);
 
-        return get_string_from_response(connection);
+        return tool.get_string_from_response(connection);
     }
 }

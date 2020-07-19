@@ -1,4 +1,4 @@
-package qiang.blog.toolAjax;
+package cn.phyer.blog.toolAjax;
 
 import com.yahoo.platform.yui.compressor.CssCompressor;
 import com.yahoo.platform.yui.compressor.JavaScriptCompressor;

@@ -1,7 +1,7 @@
-package qiang.blog.plugin;
+package cn.phyer.blog.plugin;
 
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.UserDao;
+import cn.phyer.blog.dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

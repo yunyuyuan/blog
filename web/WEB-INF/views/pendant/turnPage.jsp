@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="static qiang.blog.tool.calcPageInfo" %>
-<%@ page import="static qiang.blog.tool.calcPageCount" %>
+<%@ page import="static cn.phyer.blog.tool.calcPageInfo" %>
+<%@ page import="static cn.phyer.blog.tool.calcPageCount" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%

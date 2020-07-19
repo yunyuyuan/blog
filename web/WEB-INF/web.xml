@@ -12,7 +12,7 @@
         <session-timeout>14400</session-timeout>
     </session-config>
     <listener>
-        <listener-class>qiang.blog.plugin.ContextLoader</listener-class>
+        <listener-class>cn.phyer.blog.plugin.ContextLoader</listener-class>
     </listener>
 
 <!--  页面  -->
@@ -43,15 +43,15 @@
 <!--  ajax  -->
     <servlet>
         <servlet-name>publicAction</servlet-name>
-        <servlet-class>qiang.blog.sqlAjax.PublicAction</servlet-class>
+        <servlet-class>cn.phyer.blog.sqlAjax.PublicAction</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>commentAction</servlet-name>
-        <servlet-class>qiang.blog.sqlAjax.CommentAction</servlet-class>
+        <servlet-class>cn.phyer.blog.sqlAjax.CommentAction</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>imgUpload</servlet-name>
-        <servlet-class>qiang.blog.toolAjax.ImgUpload</servlet-class>
+        <servlet-class>cn.phyer.blog.toolAjax.ImgUpload</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>verify_manager</servlet-name>
@@ -59,32 +59,32 @@
     </servlet>
     <servlet>
         <servlet-name>manage</servlet-name>
-        <servlet-class>qiang.blog.sqlAjax.Manage</servlet-class>
+        <servlet-class>cn.phyer.blog.sqlAjax.Manage</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>redirect</servlet-name>
-        <servlet-class>qiang.blog.plugin.UrlRedirect</servlet-class>
+        <servlet-class>cn.phyer.blog.plugin.UrlRedirect</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ico</servlet-name>
-        <servlet-class>qiang.blog.toolAjax.GenerateIco</servlet-class>
+        <servlet-class>cn.phyer.blog.toolAjax.GenerateIco</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>compress</servlet-name>
-        <servlet-class>qiang.blog.toolAjax.Compress</servlet-class>
+        <servlet-class>cn.phyer.blog.toolAjax.Compress</servlet-class>
     </servlet>
 <!--  bind  -->
     <servlet>
         <servlet-name>githubbind</servlet-name>
-        <servlet-class>qiang.blog.bind.GithubBind</servlet-class>
+        <servlet-class>cn.phyer.blog.bind.GithubBind</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>qqbind</servlet-name>
-        <servlet-class>qiang.blog.bind.QqBind</servlet-class>
+        <servlet-class>cn.phyer.blog.bind.QqBind</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>msbind</servlet-name>
-        <servlet-class>qiang.blog.bind.MsBind</servlet-class>
+        <servlet-class>cn.phyer.blog.bind.MsBind</servlet-class>
     </servlet>
 
 

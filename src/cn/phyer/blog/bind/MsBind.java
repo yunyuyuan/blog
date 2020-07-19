@@ -1,5 +1,6 @@
-package qiang.blog.bind;
+package cn.phyer.blog.bind;
 
+import cn.phyer.blog.tool;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
@@ -9,7 +10,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.UserDao;
+import cn.phyer.blog.dao.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,9 +20,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
-
-import static qiang.blog.tool.get_string_from_response;
-import static qiang.blog.tool.oauthPost;
 
 public class MsBind extends HttpServlet {
     private UserDao userDao;
@@ -70,7 +68,7 @@ public class MsBind extends HttpServlet {
                 "&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2FUser.Read&code=" + code;
         URL url = new URL("https://login.microsoftonline.com/common/oauth2/v2.0/token");
 
-        return get_string_from_response(oauthPost(url, paras));
+        return tool.get_string_from_response(tool.oauthPost(url, paras));
     }
 
     private String getUserInfo(String token) throws IOException {

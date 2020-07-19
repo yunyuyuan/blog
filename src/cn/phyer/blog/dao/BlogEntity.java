@@ -1,4 +1,4 @@
-package qiang.blog.dao;
+package cn.phyer.blog.dao;
 
 
 public class BlogEntity {

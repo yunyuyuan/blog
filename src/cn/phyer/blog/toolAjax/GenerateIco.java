@@ -1,4 +1,4 @@
-package qiang.blog.toolAjax;
+package cn.phyer.blog.toolAjax;
 
 import net.sf.image4j.codec.ico.ICOEncoder;
 import org.springframework.jdbc.core.JdbcTemplate;

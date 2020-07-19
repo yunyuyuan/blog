@@ -1,8 +1,8 @@
-package qiang.blog.toolAjax;
+package cn.phyer.blog.toolAjax;
 
+import cn.phyer.blog.dao.UserDao;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import qiang.blog.dao.ImgDao;
-import qiang.blog.dao.UserDao;
+import cn.phyer.blog.dao.ImgDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
