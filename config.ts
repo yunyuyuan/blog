@@ -14,6 +14,7 @@ export default {
   CloudflareAnalyze: "89460884e1e44e02a7320077f16d620f", // cloudflare的统计，https://developers.cloudflare.com/analytics/web-analytics
   CommentRepoId: "R_kgDOGRGGfg", // 评论系统，参考 https://github.com/yunyuyuan/nuxt-blog/wiki/2.3-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F
   CommentDiscussionCategoryId: "DIC_kwDOGRGGfs4CQ5Jp", // 评论系统
+  CommentRepo: "yunyuyuan/nuxt-blog", // 评论所在的仓库，格式为 owner/name，留空时使用 githubName/githubRepo
 
   database: { // 参考 https://github.com/yunyuyuan/nuxt-blog/wiki/2.4-%E6%B5%8F%E8%A7%88%E9%87%8F%E7%BB%9F%E8%AE%A1
     initialVisitors: 1, // 如果设置成10000，那么发一篇文章立马就有10000个浏览量！
