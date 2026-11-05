@@ -9,10 +9,6 @@ on:
 jobs:
   build:
     runs-on: node22
-    # Only run when TARGET_BRANCH is unset, or the current branch matches it.
-    # When this condition is false the job is *skipped* (not failed), so no
-    # failure notification is sent.
-    if: ${{ vars.TARGET_BRANCH == '' || github.ref == format('refs/heads/{0}', vars.TARGET_BRANCH) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
